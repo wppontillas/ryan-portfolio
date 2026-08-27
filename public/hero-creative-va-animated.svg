@@ -1,0 +1,220 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Animated creative video editor hero illustration</title>
+  <desc id="desc">A transparent animated SVG with a glowing video play symbol, editing timeline, waveform, floating media frames and subtle motion for a creative video editor portfolio hero section.</desc>
+
+  <defs>
+    <linearGradient id="tealLine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#70F0D5"/>
+      <stop offset="100%" stop-color="#37BFA7"/>
+    </linearGradient>
+
+    <linearGradient id="panelFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#14201F" stop-opacity=".92"/>
+      <stop offset="100%" stop-color="#08100F" stop-opacity=".78"/>
+    </linearGradient>
+
+    <radialGradient id="softGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#61EFD0" stop-opacity=".26"/>
+      <stop offset="55%" stop-color="#61EFD0" stop-opacity=".08"/>
+      <stop offset="100%" stop-color="#61EFD0" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="shadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity=".42"/>
+    </filter>
+
+    <pattern id="dots" width="48" height="48" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.4" fill="#FFFFFF" fill-opacity=".10"/>
+    </pattern>
+
+    <clipPath id="screenClip">
+      <rect x="1000" y="180" width="420" height="256" rx="24"/>
+    </clipPath>
+
+    <style>
+      .float-a { animation: floatA 6s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      .float-b { animation: floatB 7.5s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      .float-c { animation: floatC 5.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      .pulse { animation: pulse 2.7s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      .glow-pulse { animation: glowPulse 3.4s ease-in-out infinite; }
+      .playhead { animation: playhead 5s linear infinite; }
+      .scan { animation: scan 4.6s linear infinite; }
+      .dash { stroke-dasharray: 10 18; animation: dash 10s linear infinite; }
+      .wave1 { animation: wave 1.3s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center bottom; }
+      .wave2 { animation: wave 1.7s ease-in-out .15s infinite alternate; transform-box: fill-box; transform-origin: center bottom; }
+      .wave3 { animation: wave 1.15s ease-in-out .3s infinite alternate; transform-box: fill-box; transform-origin: center bottom; }
+      .wave4 { animation: wave 1.9s ease-in-out .45s infinite alternate; transform-box: fill-box; transform-origin: center bottom; }
+      .blink { animation: blink 1.2s steps(1,end) infinite; }
+      .rotate-slow { animation: rotateSlow 18s linear infinite; transform-box: fill-box; transform-origin: center; }
+
+      @keyframes floatA {
+        0%,100% { transform: translate(0,0) rotate(0deg); }
+        50% { transform: translate(-10px,-16px) rotate(-1deg); }
+      }
+      @keyframes floatB {
+        0%,100% { transform: translate(0,0) rotate(0deg); }
+        50% { transform: translate(12px,12px) rotate(1.2deg); }
+      }
+      @keyframes floatC {
+        0%,100% { transform: translateY(0); }
+        50% { transform: translateY(-13px); }
+      }
+      @keyframes pulse {
+        0%,100% { transform: scale(1); opacity: .92; }
+        50% { transform: scale(1.055); opacity: 1; }
+      }
+      @keyframes glowPulse {
+        0%,100% { opacity: .38; }
+        50% { opacity: .72; }
+      }
+      @keyframes playhead {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(344px); }
+      }
+      @keyframes scan {
+        0% { transform: translateX(-130px); opacity: 0; }
+        15% { opacity: .5; }
+        85% { opacity: .5; }
+        100% { transform: translateX(530px); opacity: 0; }
+      }
+      @keyframes dash {
+        to { stroke-dashoffset: -220; }
+      }
+      @keyframes wave {
+        from { transform: scaleY(.45); }
+        to { transform: scaleY(1); }
+      }
+      @keyframes blink {
+        0%,49% { opacity: 1; }
+        50%,100% { opacity: .15; }
+      }
+      @keyframes rotateSlow {
+        to { transform: rotate(360deg); }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .float-a,.float-b,.float-c,.pulse,.glow-pulse,.playhead,.scan,.dash,
+        .wave1,.wave2,.wave3,.wave4,.blink,.rotate-slow {
+          animation: none !important;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- transparent background -->
+  <rect width="1600" height="900" fill="none"/>
+
+  <!-- faint right-side composition field -->
+  <ellipse class="glow-pulse" cx="1210" cy="440" rx="330" ry="310" fill="url(#softGlow)"/>
+  <rect x="830" y="85" width="690" height="700" rx="72" fill="url(#dots)" opacity=".52"/>
+
+  <!-- orbit lines -->
+  <g class="rotate-slow" opacity=".26" fill="none" stroke="#67E9CE" stroke-width="1.5">
+    <ellipse cx="1210" cy="440" rx="290" ry="250"/>
+    <ellipse cx="1210" cy="440" rx="230" ry="305" transform="rotate(28 1210 440)"/>
+  </g>
+
+  <!-- floating media card -->
+  <g class="float-a" filter="url(#shadow)">
+    <rect x="1000" y="180" width="420" height="256" rx="24" fill="url(#panelFill)" stroke="#7FEED8" stroke-opacity=".28"/>
+    <g clip-path="url(#screenClip)">
+      <rect x="1000" y="180" width="420" height="256" fill="#0A1213"/>
+      <path d="M1000 366l72-72 58 42 92-102 74 62 58-49 66 74v115h-420z" fill="#183036"/>
+      <path d="M1000 369q65-18 136 0t142 0 142 0v67h-420z" fill="#1B4C4A" fill-opacity=".52"/>
+      <rect class="scan" x="1008" y="180" width="62" height="256" fill="#70F0D5" fill-opacity=".08"/>
+    </g>
+
+    <g class="pulse" filter="url(#glow)" fill="none" stroke="url(#tealLine)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="1210" cy="305" r="58"/>
+      <path d="M1195 270l47 35-47 35z"/>
+    </g>
+
+    <circle cx="1032" cy="210" r="5" fill="#70F0D5" fill-opacity=".75"/>
+    <circle cx="1052" cy="210" r="5" fill="#FFFFFF" fill-opacity=".20"/>
+    <circle cx="1072" cy="210" r="5" fill="#FFFFFF" fill-opacity=".14"/>
+  </g>
+
+  <!-- editor timeline panel -->
+  <g class="float-b" filter="url(#shadow)">
+    <rect x="930" y="500" width="510" height="210" rx="26" fill="url(#panelFill)" stroke="#FFFFFF" stroke-opacity=".10"/>
+    <rect x="958" y="535" width="454" height="130" rx="12" fill="#07100F"/>
+
+    <!-- track lines -->
+    <g stroke="#FFFFFF" stroke-opacity=".08">
+      <path d="M958 568h454"/>
+      <path d="M958 604h454"/>
+      <path d="M958 640h454"/>
+      <path d="M1004 535v130M1052 535v130M1100 535v130M1148 535v130M1196 535v130M1244 535v130M1292 535v130M1340 535v130"/>
+    </g>
+
+    <!-- timeline clips -->
+    <rect x="978" y="549" width="120" height="18" rx="4" fill="#6C5CE7"/>
+    <rect x="1108" y="549" width="88" height="18" rx="4" fill="#7B6EF6"/>
+    <rect x="1207" y="549" width="164" height="18" rx="4" fill="#7566EE"/>
+
+    <rect x="978" y="585" width="72" height="18" rx="4" fill="#3BD3B7"/>
+    <rect x="1060" y="585" width="158" height="18" rx="4" fill="#31C8AF"/>
+    <rect x="1229" y="585" width="142" height="18" rx="4" fill="#40D9BE"/>
+
+    <rect x="978" y="621" width="135" height="18" rx="4" fill="#2A9BB2"/>
+    <rect x="1123" y="621" width="106" height="18" rx="4" fill="#34ABC1"/>
+    <rect x="1239" y="621" width="132" height="18" rx="4" fill="#2498AE"/>
+
+    <!-- moving playhead -->
+    <g class="playhead">
+      <path d="M991 538v125" stroke="#79F1D9" stroke-width="3"/>
+      <path d="M984 538h14l-7 10z" fill="#79F1D9"/>
+    </g>
+
+    <text x="959" y="689" fill="#A8B5B2" font-family="Arial,Helvetica,sans-serif" font-size="14" letter-spacing="3">EDIT • CUT • CREATE</text>
+  </g>
+
+  <!-- waveform strip -->
+  <g class="float-c">
+    <rect x="1074" y="735" width="284" height="70" rx="35" fill="#0C1514" stroke="#73EFD6" stroke-opacity=".18"/>
+    <g transform="translate(1110 750)" fill="#6FEED4">
+      <rect class="wave1" x="0" y="9" width="8" height="30" rx="4"/>
+      <rect class="wave2" x="18" y="2" width="8" height="44" rx="4"/>
+      <rect class="wave3" x="36" y="12" width="8" height="24" rx="4"/>
+      <rect class="wave4" x="54" y="0" width="8" height="48" rx="4"/>
+      <rect class="wave2" x="72" y="6" width="8" height="36" rx="4"/>
+      <rect class="wave1" x="90" y="14" width="8" height="20" rx="4"/>
+      <rect class="wave4" x="108" y="4" width="8" height="40" rx="4"/>
+      <rect class="wave3" x="126" y="11" width="8" height="26" rx="4"/>
+      <rect class="wave2" x="144" y="1" width="8" height="46" rx="4"/>
+      <rect class="wave1" x="162" y="9" width="8" height="30" rx="4"/>
+    </g>
+    <circle class="blink" cx="1326" cy="770" r="7" fill="#70F0D5"/>
+  </g>
+
+  <!-- decorative connected nodes -->
+  <g fill="none" stroke="#6FEBD2" stroke-opacity=".30" stroke-width="2" class="dash">
+    <path d="M850 260C930 210 966 242 1000 270"/>
+    <path d="M870 680C928 640 934 632 958 620"/>
+  </g>
+  <g fill="#72EFD6">
+    <circle cx="848" cy="260" r="5"/>
+    <circle cx="869" cy="680" r="5"/>
+  </g>
+
+  <!-- subtle corner frame accents -->
+  <g fill="none" stroke="#FFFFFF" stroke-opacity=".13" stroke-width="2">
+    <path d="M1450 125h38v38"/>
+    <path d="M970 765h-38v-38"/>
+  </g>
+
+  <!-- small floating status chip -->
+  <g class="float-a">
+    <rect x="1375" y="456" width="122" height="42" rx="21" fill="#0E1817" stroke="#70F0D5" stroke-opacity=".25"/>
+    <circle cx="1400" cy="477" r="5" fill="#70F0D5"/>
+    <text x="1416" y="482" fill="#C9D7D4" font-family="Arial,Helvetica,sans-serif" font-size="13" letter-spacing="1.5">RENDER</text>
+  </g>
+</svg>

@@ -64,6 +64,11 @@ export default async function ProjectDetailPage({
             videoUrl={project.videoUrl}
             thumbnail={project.thumbnail}
             title={project.title}
+            aspect={
+              project.videoOrientation === "portrait"
+                ? "aspect-[9/16] max-w-sm mx-auto"
+                : "aspect-video"
+            }
           />
         </Container>
       </section>

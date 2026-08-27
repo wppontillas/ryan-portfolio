@@ -1,9 +1,9 @@
 export const siteConfig = {
-  name: "YOUR NAME",
+  name: "WILFRED",
   role: "Video Editor & Creative VA",
   tagline: "I turn raw footage into content people want to watch.",
   description:
-    "Video editor and creative virtual assistant helping creators and businesses produce engaging short-form, YouTube, podcast, and social media content.",
+    "I help creators turn raw footage into engaging short-form content quickly, using Premiere Pro and AI-assisted workflows.",
   url: "https://your-domain.com",
   email: "hello@your-domain.com",
   location: "Available worldwide · Remote",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { parseVideoUrl } from "@/lib/video";
 
@@ -9,15 +9,81 @@ export function VideoPlayer({
   thumbnail,
   title,
   aspect = "aspect-video",
+  eager = false,
 }: {
   videoUrl: string;
   thumbnail: string;
   title: string;
   aspect?: string;
+  eager?: boolean;
 }) {
   const [playing, setPlaying] = useState(false);
+  const [muted, setMuted] = useState(true);
+  const scrollVideoRef = useRef<HTMLVideoElement>(null);
   const parsed = parseVideoUrl(videoUrl);
   const canPlay = parsed.kind !== "none";
+
+  useEffect(() => {
+    const video = scrollVideoRef.current;
+    if (!eager || !video) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.5 },
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [eager]);
+
+  if (eager && canPlay && parsed.kind === "direct") {
+    return (
+      <div className={`relative w-full overflow-hidden rounded-2xl bg-black ${aspect}`}>
+        <video
+          ref={scrollVideoRef}
+          src={parsed.url}
+          controls
+          controlsList="nodownload noremoteplayback"
+          disablePictureInPicture
+          onContextMenu={(e) => e.preventDefault()}
+          muted={muted}
+          loop
+          playsInline
+          preload="metadata"
+          className="h-full w-full"
+          aria-label={title}
+        />
+        <button
+          type="button"
+          onClick={() => setMuted((m) => !m)}
+          aria-label={muted ? "Unmute video" : "Mute video"}
+          className="absolute bottom-20 right-4 flex h-10 w-10 items-center justify-center rounded-full border border-border bg-bg/80 text-fg backdrop-blur-sm transition-colors hover:bg-bg"
+        >
+          {muted ? (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M11 5 6 9H3v6h3l5 4V5z" fill="currentColor" />
+              <path d="M16 9l5 6M21 9l-5 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          ) : (
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M11 5 6 9H3v6h3l5 4V5z" fill="currentColor" />
+              <path
+                d="M15.5 8.5a5 5 0 0 1 0 7M18 6a9 9 0 0 1 0 12"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+            </svg>
+          )}
+        </button>
+      </div>
+    );
+  }
 
   if (playing && canPlay) {
     if (parsed.kind === "direct") {
@@ -26,6 +92,9 @@ export function VideoPlayer({
           <video
             src={parsed.url}
             controls
+            controlsList="nodownload noremoteplayback"
+            disablePictureInPicture
+            onContextMenu={(e) => e.preventDefault()}
             autoPlay
             className="h-full w-full"
             aria-label={title}

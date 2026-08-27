@@ -35,6 +35,7 @@ export interface Project {
   clientType: string;
   thumbnail: string;
   videoUrl: string;
+  videoOrientation?: "landscape" | "portrait";
   description: string;
   goal?: string;
   services: string[];
@@ -54,6 +55,14 @@ export interface Service {
 
 export interface Tool {
   name: string;
+}
+
+export interface Certificate {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  image: string;
 }
 
 export interface WorkflowStep {

@@ -4,14 +4,14 @@ export const projects: Project[] = [
   {
     id: "1",
     slug: "talking-head-youtube-edit",
-    title: "YOUR PROJECT TITLE",
+    title: "TALKING HEADS",
     category: "youtube",
     clientType: "Content Creator",
-    thumbnail: "/placeholders/project-01.svg",
-    videoUrl: "",
+    thumbnail: "/thumbnails/talking-head-youtube-edit-v3.jpg",
+    videoUrl: "/videos/Talking_Head_You-v3.mp4",
     goal: "Turn raw footage into a fast-paced, engaging YouTube video.",
     description:
-      "A talking-head YouTube edit focused on pacing and retention — dead air removed, mistakes cut, and the result tightened into a fast, watchable video.",
+      "A polished talking-head edit designed to keep viewers engaged through tight pacing, clean cuts, strategic B-roll, animated text, enhanced audio, and subtle sound design.",
     services: [
       "Removed pauses and mistakes",
       "Added B-roll",
@@ -31,8 +31,9 @@ export const projects: Project[] = [
     title: "YOUR PROJECT TITLE",
     category: "short-form",
     clientType: "Personal Brand",
-    thumbnail: "/placeholders/project-02.svg",
-    videoUrl: "",
+    thumbnail: "/thumbnails/short-form-reel-series.jpg",
+    videoUrl: "/videos/short-form.mp4",
+    videoOrientation: "portrait",
     goal: "Repurpose long-form content into scroll-stopping vertical clips.",
     description:
       "A batch of short-form clips cut from long-form source, built for retention with pattern interrupts, captions, and sound design.",

@@ -1,5 +1,7 @@
 "use server";
 
+import { Resend } from "resend";
+
 export interface ContactFormState {
   status: "idle" | "success" | "error";
   message?: string;
@@ -44,9 +46,33 @@ export async function submitInquiry(
     };
   }
 
-  // TODO: connect a delivery provider (Resend, EmailJS, Formspree, or a
-  // custom API route) here. For now, inquiries are logged server-side.
-  console.log("New project inquiry:", values);
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
+  const { error } = await resend.emails.send({
+    from: "Portfolio Contact <onboarding@resend.dev>",
+    to: process.env.CONTACT_TO_EMAIL!,
+    replyTo: values.email,
+    subject: `New project inquiry from ${values.name}`,
+    text: [
+      `Name: ${values.name}`,
+      `Email: ${values.email}`,
+      `Company: ${values.company || "-"}`,
+      `Need: ${values.need}`,
+      `Volume: ${values.volume}`,
+      `Budget: ${values.budget || "-"}`,
+      "",
+      "Description:",
+      values.description,
+    ].join("\n"),
+  });
+
+  if (error) {
+    console.error("Failed to send project inquiry:", error);
+    return {
+      status: "error",
+      message: "Something went wrong sending your inquiry. Please try again.",
+    };
+  }
 
   return {
     status: "success",

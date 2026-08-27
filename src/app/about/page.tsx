@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { Tools } from "@/components/sections/Tools";
+import { Certificates } from "@/components/sections/Certificates";
 import { CTASection } from "@/components/sections/CTASection";
 import { siteConfig } from "@/config/site";
 
@@ -60,11 +61,11 @@ export default function AboutPage() {
 
           <Reveal
             delay={0.1}
-            className="relative mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl border border-border"
+            className="relative mx-auto aspect-4/5 w-full max-w-sm overflow-hidden rounded-3xl border border-border"
           >
             <Image
-              src="/placeholders/portrait.svg"
-              alt="Portrait placeholder"
+              src="/animated-video-editor-profile.svg"
+              alt={siteConfig.name}
               fill
               sizes="(min-width: 1024px) 30vw, 80vw"
               className="object-cover"
@@ -92,6 +93,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      <Certificates />
       <Tools />
       <CTASection />
     </>

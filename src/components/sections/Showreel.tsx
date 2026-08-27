@@ -9,15 +9,16 @@ export function Showreel() {
       <Container className="flex flex-col gap-10">
         <SectionHeading
           eyebrow="Showreel"
-          title="60 Seconds of My Work"
-          description="A quick look at pacing, color, and sound design across recent projects."
+          title="Creative Editing"
+          description="A showcase of my editing style, featuring dynamic cuts, smooth transitions, color grading, motion, and sound design."
         />
         <Reveal delay={0.1}>
           <VideoPlayer
-            videoUrl=""
+            videoUrl="/videos/showreel.mp4"
             thumbnail="/placeholders/showreel.svg"
             title="Showreel"
             aspect="aspect-video"
+            eager
           />
         </Reveal>
       </Container>

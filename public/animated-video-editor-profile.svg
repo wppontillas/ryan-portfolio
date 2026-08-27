@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Animated video editor profile illustration</title>
+  <desc id="desc">Dark video editing workstation with laptop, timeline, neon play icon, clapperboard, camera lens and headphones. Transparent outside the circle.</desc>
+  <defs>
+    <radialGradient id="sceneBg" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#172523"/><stop offset="55%" stop-color="#0d1515"/><stop offset="100%" stop-color="#050808"/>
+    </radialGradient>
+    <linearGradient id="desk" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#182222"/><stop offset="100%" stop-color="#070b0c"/></linearGradient>
+    <linearGradient id="screen" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#11191c"/><stop offset="100%" stop-color="#080d0f"/></linearGradient>
+    <linearGradient id="mountains" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#233d43"/><stop offset="100%" stop-color="#0d1c22"/></linearGradient>
+    <filter id="neon" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#000" flood-opacity=".55"/></filter>
+    <clipPath id="circleClip"><circle cx="400" cy="500" r="365"/></clipPath>
+    <style>
+      .float{animation:float 4.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center}.float2{animation:float2 5.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center}.pulse{animation:pulse 2.2s ease-in-out infinite;transform-box:fill-box;transform-origin:center}.glow{animation:glow 2.4s ease-in-out infinite}.scan{animation:scan 4s linear infinite}.cursor{animation:cursor 3.2s linear infinite}.bar1{animation:bar 1.2s ease-in-out infinite alternate;transform-origin:bottom;transform-box:fill-box}.bar2{animation:bar 1.45s ease-in-out .15s infinite alternate;transform-origin:bottom;transform-box:fill-box}.bar3{animation:bar 1s ease-in-out .3s infinite alternate;transform-origin:bottom;transform-box:fill-box}
+      @keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(.6deg)}}@keyframes float2{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(8px) rotate(-.5deg)}}@keyframes pulse{0%,100%{transform:scale(1);opacity:.9}50%{transform:scale(1.055);opacity:1}}@keyframes glow{0%,100%{opacity:.72}50%{opacity:1}}@keyframes scan{0%{transform:translateX(-170px);opacity:0}12%{opacity:.55}88%{opacity:.55}100%{transform:translateX(300px);opacity:0}}@keyframes cursor{from{transform:translateX(0)}to{transform:translateX(292px)}}@keyframes bar{from{transform:scaleY(.35)}to{transform:scaleY(1)}}
+      @media (prefers-reduced-motion:reduce){.float,.float2,.pulse,.glow,.scan,.cursor,.bar1,.bar2,.bar3{animation:none!important}}
+    </style>
+  </defs>
+  <g clip-path="url(#circleClip)">
+    <circle cx="400" cy="500" r="365" fill="url(#sceneBg)"/>
+    <circle cx="400" cy="500" r="325" fill="none" stroke="#fff" stroke-opacity=".035" stroke-width="2"/>
+    <circle cx="400" cy="500" r="285" fill="none" stroke="#56f0d1" stroke-opacity=".035" stroke-width="2"/>
+    <g class="pulse" filter="url(#neon)" fill="none" stroke="#5ff5d5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M482 235h185a24 24 0 0 1 24 24v126a24 24 0 0 1-24 24H482z"/><path d="M482 235l-54-8-7 191 61-9"/><path d="M435 244l42 5M432 285l45 5M431 327l46 5M429 369l48 5"/><path d="M558 285l76 51-76 51z"/>
+    </g>
+    <g class="float2"><rect x="650" y="405" width="88" height="86" rx="16" fill="#0a0e0f"/><g stroke="#4b852d" stroke-width="7" stroke-linecap="round"><path d="M694 408q-8-65-29-100"/><path d="M697 410q5-68 16-105"/><path d="M692 411q-30-48-48-72"/><path d="M700 411q28-55 47-82"/><path d="M689 411q-3-70 4-112"/></g></g>
+    <path d="M60 650L762 563v300L92 920z" fill="url(#desk)"/>
+    <g class="float" filter="url(#softShadow)">
+      <path d="M105 410l386-33a21 21 0 0 1 23 19l32 314-420 35z" fill="#111619" stroke="#465154" stroke-width="4"/>
+      <rect x="131" y="425" width="357" height="246" rx="10" fill="url(#screen)"/>
+      <rect x="149" y="445" width="104" height="86" rx="4" fill="#0a0f11"/>
+      <g fill="#27393e"><rect x="159" y="456" width="36" height="25" rx="2"/><rect x="202" y="456" width="36" height="25" rx="2"/><rect x="159" y="489" width="36" height="25" rx="2"/><rect x="202" y="489" width="36" height="25" rx="2"/></g>
+      <rect x="270" y="445" width="197" height="95" rx="4" fill="#0c171a"/><path d="M270 514l49-40 35 30 41-42 72 52v26H270z" fill="url(#mountains)"/><path d="M270 515q52-15 99 0t98 0v25H270z" fill="#21484c" fill-opacity=".58"/>
+      <rect x="149" y="550" width="318" height="104" rx="5" fill="#080d10"/><g opacity=".35" stroke="#4b5d63"><path d="M149 579h318M149 609h318M149 639h318"/><path d="M190 550v104M240 550v104M290 550v104M340 550v104M390 550v104M440 550v104"/></g>
+      <g><rect x="166" y="570" width="96" height="14" rx="3" fill="#8257e6"/><rect x="276" y="570" width="112" height="14" rx="3" fill="#8257e6"/><rect x="397" y="570" width="52" height="14" rx="3" fill="#8257e6"/><rect x="166" y="599" width="58" height="14" rx="3" fill="#27c9b8"/><rect x="232" y="599" width="126" height="14" rx="3" fill="#27c9b8"/><rect x="365" y="599" width="84" height="14" rx="3" fill="#27c9b8"/><rect x="166" y="628" width="103" height="14" rx="3" fill="#1ca5c9"/><rect x="277" y="628" width="74" height="14" rx="3" fill="#1ca5c9"/></g>
+      <rect class="cursor" x="167" y="555" width="2.5" height="96" fill="#5ff5d5"/><rect class="scan" x="180" y="445" width="36" height="208" fill="#5ff5d5" fill-opacity=".12"/>
+      <path d="M124 706l420-35 73 78-413 45z" fill="#151a1d" stroke="#394347" stroke-width="3"/><g fill="#232a2d"><rect x="177" y="716" width="298" height="9" rx="3"/><rect x="190" y="735" width="310" height="9" rx="3"/><rect x="208" y="754" width="282" height="9" rx="3"/></g><rect x="327" y="742" width="98" height="34" rx="5" fill="#101416" stroke="#313a3d"/>
+    </g>
+    <g class="float2" filter="url(#softShadow)"><ellipse cx="122" cy="748" rx="64" ry="55" fill="#07090a"/><ellipse cx="122" cy="735" rx="52" ry="45" fill="#161b1d" stroke="#3f4b4f" stroke-width="5"/><ellipse cx="122" cy="735" rx="31" ry="28" fill="#050809"/><ellipse cx="122" cy="735" rx="17" ry="15" fill="#194b48"/><circle cx="113" cy="727" r="5" fill="#69e9d0" fill-opacity=".55"/></g>
+    <g class="float" filter="url(#softShadow)"><rect x="565" y="615" width="108" height="145" rx="28" fill="#0c0e0f" stroke="#273234" stroke-width="3"/><path d="M666 650q65-10 62 44t-58 37" fill="none" stroke="#1c2528" stroke-width="17"/><text x="619" y="667" text-anchor="middle" fill="#d8dddd" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">EDIT</text><text x="619" y="696" text-anchor="middle" fill="#d8dddd" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">CREATE</text><text x="619" y="725" text-anchor="middle" fill="#d8dddd" font-family="Arial,Helvetica,sans-serif" font-size="24" font-weight="700">INSPIRE</text></g>
+    <g class="float2" filter="url(#softShadow)"><path d="M275 783l357-43 22 54-349 56z" fill="#0b0d0e" stroke="#596063" stroke-width="3"/><path d="M289 759l338-44 17 38-340 46z" fill="#111416"/><g fill="#ececec"><path d="M325 754l55-7-28 39-55 7z"/><path d="M410 743l55-7-28 39-55 7z"/><path d="M496 732l55-7-29 39-55 7z"/><path d="M580 721l47-6 17 38-36 5z"/></g><g fill="#d9d9d9" font-family="Arial,Helvetica,sans-serif" font-size="22" font-weight="700"><text x="340" y="828">SCENE</text><text x="472" y="809">TAKE</text><text x="575" y="793">ROLL</text></g><g stroke="#d9d9d9" stroke-width="3"><path d="M328 842l302-43"/><path d="M337 874l302-43"/><path d="M346 906l281-40"/></g></g>
+    <g class="float" filter="url(#softShadow)" fill="none" stroke="#0a0c0d"><path d="M694 672q84-65 129 10" stroke-width="23"/><rect x="682" y="690" width="45" height="98" rx="22" fill="#111517" stroke="#242c2f" stroke-width="5"/><rect x="755" y="681" width="43" height="101" rx="21" fill="#111517" stroke="#242c2f" stroke-width="5"/></g>
+    <g transform="translate(518 474)"><rect class="bar1" x="0" y="18" width="7" height="24" rx="3.5" fill="#5ff5d5"/><rect class="bar2" x="12" y="10" width="7" height="32" rx="3.5" fill="#5ff5d5"/><rect class="bar3" x="24" y="3" width="7" height="39" rx="3.5" fill="#5ff5d5"/></g>
+  </g>
+  <circle cx="400" cy="500" r="365" fill="none" stroke="#8e9798" stroke-width="3" stroke-opacity=".75"/>
+  <circle class="glow" cx="400" cy="500" r="358" fill="none" stroke="#5ff5d5" stroke-width="2" stroke-opacity=".11"/>
+</svg>
