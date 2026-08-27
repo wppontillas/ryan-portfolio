@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { AssistantWidget } from "@/components/assistant/AssistantWidget";
 import "./globals.css";
 
 const inter = Inter({
@@ -61,6 +62,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <Footer />
+        <AssistantWidget />
       </body>
     </html>
   );
