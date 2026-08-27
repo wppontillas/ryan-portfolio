@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useState } from "react";
 import { useFormStatus } from "react-dom";
 import { submitInquiry, type ContactFormState } from "@/app/contact/actions";
 
@@ -28,7 +28,7 @@ function SubmitButton() {
       disabled={pending}
       className="inline-flex items-center justify-center gap-2 rounded-full bg-accent px-8 py-3 text-sm font-medium text-accent-fg transition-colors hover:bg-accent/90 disabled:opacity-60"
     >
-      {pending ? "Sending..." : "Start a Project"}
+      {pending ? "Sending..." : "Send Inquiry"}
     </button>
   );
 }
@@ -42,20 +42,68 @@ function FieldError({ message }: { message?: string }) {
   );
 }
 
+function SuccessMessage({
+  message,
+  onReset,
+}: {
+  message: string;
+  onReset: () => void;
+}) {
+  return (
+    <div
+      role="status"
+      className="flex flex-col items-center gap-4 rounded-2xl border border-accent/40 bg-accent/10 px-6 py-16 text-center"
+    >
+      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-fg">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M5 13l4 4L19 7"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </span>
+      <h3 className="font-display text-2xl font-medium text-fg">
+        Inquiry Sent
+      </h3>
+      <p className="max-w-md text-base text-fg-secondary">{message}</p>
+      <button
+        type="button"
+        onClick={onReset}
+        className="mt-2 text-sm font-medium text-accent underline-offset-4 hover:underline"
+      >
+        Send another inquiry
+      </button>
+    </div>
+  );
+}
+
 export function ContactForm() {
   const [state, formAction] = useActionState(submitInquiry, initialState);
+  const [showSuccess, setShowSuccess] = useState(false);
   const errors = state.fieldErrors ?? {};
+
+  useEffect(() => {
+    if (state.status === "success") setShowSuccess(true);
+  }, [state]);
+
+  if (showSuccess) {
+    return (
+      <SuccessMessage
+        message={state.message ?? "Thanks for reaching out."}
+        onReset={() => setShowSuccess(false)}
+      />
+    );
+  }
 
   return (
     <form action={formAction} noValidate className="flex flex-col gap-6">
-      {state.status !== "idle" && state.message && (
+      {state.status === "error" && state.message && (
         <div
           role="status"
-          className={`rounded-xl border px-4 py-3 text-sm ${
-            state.status === "success"
-              ? "border-accent/40 bg-accent/10 text-fg"
-              : "border-red-400/40 bg-red-400/10 text-fg"
-          }`}
+          className="rounded-xl border border-red-400/40 bg-red-400/10 px-4 py-3 text-sm text-fg"
         >
           {state.message}
         </div>
