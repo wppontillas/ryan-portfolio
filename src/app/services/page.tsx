@@ -10,7 +10,7 @@ import { CTASection } from "@/components/sections/CTASection";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Short-form, YouTube, and podcast video editing, plus Creative VA support for your entire content workflow.",
+    "Speedramp edits, motion graphics, cinematic editing, and reels — video editing built for the platform it's going on.",
 };
 
 export default function ServicesPage() {
@@ -21,7 +21,7 @@ export default function ServicesPage() {
           <SectionHeading
             eyebrow="Services"
             title="How I Can Help"
-            description="Editing built for the platform it's going on, plus operational support so your content workflow never stalls."
+            description="Speedramps, motion graphics, cinematic edits, and reels — built for the platform they're going on."
           />
         </Container>
       </section>

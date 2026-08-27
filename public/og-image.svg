@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <rect width="1200" height="630" fill="#111113"/>
-  <circle cx="600" cy="94.5" r="260" fill="#00E599" fill-opacity="0.15"/>
-  <text x="90" y="305" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#FFFFFF">YOUR NAME</text>
-  <text x="90" y="375" font-family="Arial, sans-serif" font-size="32" fill="#00E599" letter-spacing="1">VIDEO EDITOR &amp; CREATIVE VA</text>
+  <circle cx="600" cy="94.5" r="260" fill="#FF8A1E" fill-opacity="0.15"/>
+  <text x="90" y="305" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#FFFFFF">RYAN</text>
+  <text x="90" y="375" font-family="Arial, sans-serif" font-size="32" fill="#FF8A1E" letter-spacing="1">SPEEDRAMP &#8226; MOTION GRAPHICS &#8226; CINEMATIC</text>
 </svg>

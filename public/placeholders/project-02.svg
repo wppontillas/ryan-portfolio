@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
   <rect width="1200" height="800" fill="#17171A"/>
-  <g><line x1="-6" y1="0" x2="394" y2="800" stroke="#00E599" stroke-opacity="0.06" stroke-width="120"/><line x1="227" y1="0" x2="627" y2="800" stroke="#00E599" stroke-opacity="0.06" stroke-width="120"/><line x1="460" y1="0" x2="860" y2="800" stroke="#00E599" stroke-opacity="0.06" stroke-width="120"/><line x1="693" y1="0" x2="1093" y2="800" stroke="#00E599" stroke-opacity="0.06" stroke-width="120"/><line x1="926" y1="0" x2="1326" y2="800" stroke="#00E599" stroke-opacity="0.06" stroke-width="120"/><line x1="-41" y1="0" x2="359" y2="800" stroke="#00E599" stroke-opacity="0.06" stroke-width="120"/></g>
+  <g><line x1="-6" y1="0" x2="394" y2="800" stroke="#FF8A1E" stroke-opacity="0.06" stroke-width="120"/><line x1="227" y1="0" x2="627" y2="800" stroke="#FF8A1E" stroke-opacity="0.06" stroke-width="120"/><line x1="460" y1="0" x2="860" y2="800" stroke="#FF8A1E" stroke-opacity="0.06" stroke-width="120"/><line x1="693" y1="0" x2="1093" y2="800" stroke="#FF8A1E" stroke-opacity="0.06" stroke-width="120"/><line x1="926" y1="0" x2="1326" y2="800" stroke="#FF8A1E" stroke-opacity="0.06" stroke-width="120"/><line x1="-41" y1="0" x2="359" y2="800" stroke="#FF8A1E" stroke-opacity="0.06" stroke-width="120"/></g>
   <rect x="0.5" y="0.5" width="1199" height="799" fill="none" stroke="rgba(255,255,255,0.12)"/>
-  <circle cx="600" cy="360" r="56" fill="#00E599" fill-opacity="0.12"/>
-  <path d="M584 332 L584 388 L630 360 Z" fill="#00E599"/>
+  <circle cx="600" cy="360" r="56" fill="#FF8A1E" fill-opacity="0.12"/>
+  <path d="M584 332 L584 388 L630 360 Z" fill="#FF8A1E"/>
   <text x="600" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="600" fill="#FFFFFF" letter-spacing="1">YOUR VIDEO</text>
   <text x="600" y="508" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#A1A1AA" letter-spacing="4">SHORT FORM</text>
 </svg>

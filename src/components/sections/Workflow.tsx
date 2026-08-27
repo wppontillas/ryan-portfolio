@@ -13,12 +13,12 @@ export function Workflow() {
           description="A simple, transparent process from raw footage to final delivery."
         />
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {workflowSteps.map((item, i) => (
             <Reveal
               key={item.step}
               delay={i * 0.1}
-              className="relative flex flex-col gap-4 border-t border-border pt-6"
+              className="relative flex flex-col gap-6 rounded-2xl border border-border bg-card p-8 transition-colors duration-300 hover:border-accent/50"
             >
               <span className="font-display text-4xl font-medium text-accent">
                 {item.step}

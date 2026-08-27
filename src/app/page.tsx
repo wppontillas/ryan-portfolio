@@ -1,4 +1,5 @@
 import { Hero } from "@/components/sections/Hero";
+import { Marquee } from "@/components/sections/Marquee";
 import { Showreel } from "@/components/sections/Showreel";
 import { SelectedWork } from "@/components/sections/SelectedWork";
 import { Workflow } from "@/components/sections/Workflow";
@@ -14,6 +15,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Marquee />
       <Showreel />
       <SelectedWork />
 
@@ -22,7 +24,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Services"
             title="What I Can Help With"
-            description="From short-form edits to full Creative VA support — one person who can own your entire content workflow."
+            description="Speedramps, motion graphics, cinematic edits, and reels — built to fit the platform they're going on."
           />
           <ServicesGrid />
           <ButtonLink href="/services" variant="secondary" className="self-start">

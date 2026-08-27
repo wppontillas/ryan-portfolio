@@ -10,7 +10,7 @@ import { projects, getProjectsWithBeforeAfter } from "@/data/projects";
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
-    "Short-form, YouTube, podcast, commercial, and social media video editing work.",
+    "Speedramp, motion graphics, cinematic, and reels video editing work.",
 };
 
 export default function PortfolioPage() {

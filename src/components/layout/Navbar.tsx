@@ -53,11 +53,17 @@ export function Navbar() {
                   key={item.href}
                   href={item.href}
                   aria-current={active ? "page" : undefined}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`relative py-1 text-sm font-medium transition-colors ${
                     active ? "text-fg" : "text-fg-secondary hover:text-fg"
                   }`}
                 >
                   {item.label}
+                  {active && (
+                    <span
+                      aria-hidden="true"
+                      className="absolute -bottom-1 left-0 h-0.5 w-full rounded-full bg-accent"
+                    />
+                  )}
                 </Link>
               );
             })}

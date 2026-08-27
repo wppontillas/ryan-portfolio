@@ -1,10 +1,4 @@
-export type Category =
-  | "short-form"
-  | "youtube"
-  | "podcast"
-  | "commercial"
-  | "social"
-  | "creative";
+export type Category = "speedramp" | "motion-graphics" | "cinematic" | "reels";
 
 export interface CategoryMeta {
   value: Category;
@@ -12,12 +6,10 @@ export interface CategoryMeta {
 }
 
 export const CATEGORIES: CategoryMeta[] = [
-  { value: "short-form", label: "Short Form" },
-  { value: "youtube", label: "YouTube" },
-  { value: "podcast", label: "Podcast" },
-  { value: "commercial", label: "Commercial" },
-  { value: "social", label: "Social Media" },
-  { value: "creative", label: "Creative Editing" },
+  { value: "speedramp", label: "Speedramp" },
+  { value: "motion-graphics", label: "Motion Graphics" },
+  { value: "cinematic", label: "Cinematic" },
+  { value: "reels", label: "Reels" },
 ];
 
 export interface BeforeAfter {
@@ -55,14 +47,6 @@ export interface Service {
 
 export interface Tool {
   name: string;
-}
-
-export interface Certificate {
-  id: string;
-  title: string;
-  issuer: string;
-  date: string;
-  image: string;
 }
 
 export interface WorkflowStep {

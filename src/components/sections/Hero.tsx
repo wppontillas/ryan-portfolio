@@ -1,8 +1,14 @@
-import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
+
+const specialties = [
+  { number: "01", label: "Speedramp" },
+  { number: "02", label: "Motion Graphics" },
+  { number: "03", label: "Cinematic" },
+  { number: "04", label: "Reels" },
+];
 
 export function Hero() {
   return (
@@ -13,16 +19,20 @@ export function Hero() {
       >
         <div className="absolute left-1/2 top-[-10%] h-130 w-205 -translate-x-1/2 rounded-full bg-accent/20 blur-[140px]" />
         <div
-          className="absolute inset-0 opacity-[0.08]"
+          className="absolute inset-0"
           style={{
             backgroundImage:
-              "linear-gradient(to right, var(--color-fg) 1px, transparent 1px), linear-gradient(to bottom, var(--color-fg) 1px, transparent 1px)",
-            backgroundSize: "64px 64px",
+              "repeating-linear-gradient(-30deg, var(--color-accent) 0, var(--color-accent) 1px, transparent 1px, transparent 220px)",
+            opacity: 0.12,
+            maskImage:
+              "radial-gradient(ellipse 70% 60% at 65% 35%, black, transparent)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 70% 60% at 65% 35%, black, transparent)",
           }}
         />
       </div>
 
-      <Container className="grid min-h-[86vh] grid-cols-1 items-center gap-12 py-28 lg:grid-cols-2">
+      <Container className="grid min-h-[86vh] grid-cols-1 items-center gap-16 py-28 lg:grid-cols-2">
         <div className="flex flex-col gap-10">
           <Reveal>
             <p className="text-xs font-medium uppercase tracking-[0.3em] text-accent">
@@ -32,9 +42,9 @@ export function Hero() {
 
           <Reveal delay={0.1}>
             <h1 className="max-w-4xl font-display text-[13vw] font-medium uppercase leading-[0.95] tracking-tight text-fg sm:text-6xl md:text-7xl lg:text-8xl">
-              Video Editor
+              Speedramp
               <br />
-              &amp; Creative VA
+              &amp; Cinematic Edits
             </h1>
           </Reveal>
 
@@ -46,8 +56,8 @@ export function Hero() {
 
           <Reveal delay={0.24}>
             <p className="max-w-lg text-base text-fg-secondary sm:text-lg">
-              I help creators turn raw footage into engaging short-form
-              content quickly, using Premiere Pro and AI-assisted workflows.
+              I help creators and brands turn raw footage into speedramps,
+              motion graphics, cinematic edits, and scroll-stopping reels.
             </p>
           </Reveal>
 
@@ -68,16 +78,23 @@ export function Hero() {
 
         <Reveal
           delay={0.15}
-          className="relative mx-auto aspect-square w-full max-w-lg"
+          className="mx-auto grid w-full max-w-md grid-cols-2 gap-4"
         >
-          <Image
-            src="/hero-creative-va-animated.svg"
-            alt=""
-            fill
-            priority
-            sizes="(min-width: 1024px) 40vw, 80vw"
-            className="object-contain"
-          />
+          {specialties.map((item, i) => (
+            <div
+              key={item.label}
+              className={`flex flex-col justify-between gap-8 rounded-2xl border border-border bg-card p-6 transition-colors duration-300 hover:border-accent/50 ${
+                i % 2 === 1 ? "sm:translate-y-6" : ""
+              }`}
+            >
+              <span className="font-display text-sm font-medium text-accent">
+                {item.number}
+              </span>
+              <span className="font-display text-lg font-medium leading-tight text-fg">
+                {item.label}
+              </span>
+            </div>
+          ))}
         </Reveal>
       </Container>
     </section>

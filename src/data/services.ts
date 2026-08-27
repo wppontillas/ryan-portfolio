@@ -2,72 +2,61 @@ import type { Service, WorkflowStep } from "@/lib/types";
 
 export const services: Service[] = [
   {
-    id: "short-form",
-    title: "Short-Form Video Editing",
-    forWho: ["TikTok", "Instagram Reels", "YouTube Shorts", "Facebook Reels"],
+    id: "speedramp",
+    title: "Speedramp Editing",
+    forWho: ["Action & sports clips", "Hype montages", "Transition-heavy reels"],
+    includes: [
+      "Dynamic speed ramps",
+      "Time remapping",
+      "Beat-synced cuts",
+      "Punch-ins & whip pans",
+      "Sound-designed transitions",
+      "Color grading",
+    ],
+    description:
+      "High-energy speed-ramped edits that hit on the beat, built to grab attention and keep it.",
+  },
+  {
+    id: "motion-graphics",
+    title: "Motion Graphics",
+    forWho: ["Brand promos", "Titles & lower thirds", "Logo animations"],
+    includes: [
+      "Animated titles & lower thirds",
+      "Kinetic typography",
+      "Logo reveals",
+      "Custom overlays & callouts",
+      "Icon & graphic animation",
+    ],
+    description:
+      "Custom motion design layered into edits to add polish, clarity, and brand identity.",
+  },
+  {
+    id: "cinematic",
+    title: "Cinematic Editing",
+    forWho: ["Brand films", "YouTube long-form", "Documentary-style content"],
+    includes: [
+      "Color grading",
+      "Sound design",
+      "Story structuring",
+      "B-roll integration",
+      "Pacing & narrative flow",
+    ],
+    description:
+      "Film-inspired edits with deliberate pacing, grading, and sound design that turn raw footage into a story.",
+  },
+  {
+    id: "reels",
+    title: "Reels & Short-Form",
+    forWho: ["TikTok", "Instagram Reels", "YouTube Shorts"],
     includes: [
       "Clean cuts",
       "Animated captions",
-      "B-roll",
-      "Music",
-      "Sound effects",
-      "Zooms",
-      "Basic motion graphics",
-      "Color correction",
+      "Trending sound sync",
+      "Hook-first pacing",
+      "Zooms & pattern interrupts",
     ],
     description:
       "Fast-paced vertical edits built to hold attention from the first frame, ready to post across platforms.",
-  },
-  {
-    id: "youtube",
-    title: "YouTube Video Editing",
-    forWho: ["Talking-head videos", "Vlogs", "Tutorials", "Long-form content"],
-    includes: [
-      "Long-form editing",
-      "Jump cuts",
-      "B-roll",
-      "Motion graphics",
-      "Lower thirds",
-      "Music",
-      "Audio enhancement",
-      "Color correction",
-      "Intro/outro",
-    ],
-    description:
-      "Full-length YouTube edits that keep pacing tight and viewers watching, from raw footage to a polished upload.",
-  },
-  {
-    id: "podcast",
-    title: "Podcast Content Editing",
-    forWho: ["Video podcasts", "Interview shows", "Solo shows"],
-    includes: [
-      "Full podcast editing",
-      "Social media clips",
-      "Captioned highlights",
-      "Speaker framing",
-      "Audio cleanup",
-    ],
-    description:
-      "End-to-end podcast editing plus a set of shareable highlight clips cut for social, so one recording becomes a full content set.",
-  },
-  {
-    id: "creative-va",
-    title: "Creative VA Support",
-    forWho: ["Creators who want one person to own the whole workflow"],
-    includes: [
-      "Organizing raw footage",
-      "Google Drive organization",
-      "File management",
-      "Content uploads",
-      "Scheduling videos",
-      "Thumbnail preparation",
-      "Content repurposing",
-      "Basic Canva graphics",
-      "YouTube uploads",
-      "Social media support",
-    ],
-    description:
-      "More than editing — support for the operational side of a content workflow, so nothing sits waiting between filming and publishing.",
   },
 ];
 

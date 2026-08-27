@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: "WILFRED",
-  role: "Video Editor & Creative VA",
-  tagline: "I turn raw footage into content people want to watch.",
+  name: "RYAN",
+  role: "Video Editor · Speedramp, Motion Graphics & Cinematic Edits",
+  tagline: "I turn raw footage into cinematic, scroll-stopping content.",
   description:
-    "I help creators turn raw footage into engaging short-form content quickly, using Premiere Pro and AI-assisted workflows.",
+    "I help creators and brands turn raw footage into cinematic edits — speed ramps, motion graphics, and scroll-stopping reels.",
   url: "https://your-domain.com",
-  email: "hello@your-domain.com",
+  email: "ryangallego2121@gmail.com",
   location: "Available worldwide · Remote",
   nav: [
     { label: "Work", href: "/portfolio" },

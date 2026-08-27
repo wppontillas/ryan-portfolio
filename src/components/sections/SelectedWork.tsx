@@ -24,7 +24,7 @@ export function SelectedWork() {
           <SectionHeading
             eyebrow="Portfolio"
             title="Selected Work"
-            description="A cross-section of recent short-form, long-form, podcast, and commercial edits."
+            description="A cross-section of recent speedramp, motion graphics, cinematic, and reels edits."
           />
           <div className="hidden sm:block">
             <ButtonLink href="/portfolio" variant="secondary">

@@ -8,7 +8,7 @@ import { siteConfig } from "@/config/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Start a video editing or Creative VA project — tell me about your content and goals.",
+    "Start a video editing project — tell me about your content and goals.",
 };
 
 export default function ContactPage() {

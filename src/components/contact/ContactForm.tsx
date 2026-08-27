@@ -7,11 +7,10 @@ import { submitInquiry, type ContactFormState } from "@/app/contact/actions";
 const initialState: ContactFormState = { status: "idle" };
 
 const needOptions = [
-  "Short-Form Editing",
-  "YouTube Editing",
-  "Podcast Editing",
-  "Commercial / Promotional Video",
-  "Creative VA Support",
+  "Speedramp Editing",
+  "Motion Graphics",
+  "Cinematic Editing",
+  "Reels & Short-Form",
   "Other",
 ];
 

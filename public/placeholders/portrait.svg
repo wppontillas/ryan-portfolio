@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000">
   <rect width="800" height="1000" fill="#17171A"/>
   <rect x="0.5" y="0.5" width="799" height="999" fill="none" stroke="rgba(255,255,255,0.12)"/>
-  <circle cx="400" cy="440" r="120" fill="none" stroke="#00E599" stroke-width="2" stroke-opacity="0.5"/>
+  <circle cx="400" cy="440" r="120" fill="none" stroke="#FF8A1E" stroke-width="2" stroke-opacity="0.5"/>
   <circle cx="400" cy="410" r="56" fill="#111113" stroke="#A1A1AA" stroke-width="2"/>
   <path d="M310 560 q90 -80 180 0" fill="#111113" stroke="#A1A1AA" stroke-width="2"/>
   <text x="400" y="660" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="600" fill="#FFFFFF" letter-spacing="1">YOUR PHOTO</text>
