@@ -8,7 +8,7 @@ export const projects: Project[] = [
     category: "youtube",
     clientType: "Content Creator",
     thumbnail: "/thumbnails/talking-head-youtube-edit-v3.jpg",
-    videoUrl: "/videos/Talking_Head_You-v3.mp4",
+    videoUrl: "/videos/Talking_Head_You-v4.mp4",
     goal: "Turn raw footage into a fast-paced, engaging YouTube video.",
     description:
       "A polished talking-head edit designed to keep viewers engaged through tight pacing, clean cuts, strategic B-roll, animated text, enhanced audio, and subtle sound design.",
@@ -32,7 +32,7 @@ export const projects: Project[] = [
     category: "short-form",
     clientType: "Personal Brand",
     thumbnail: "/thumbnails/short-form-reel-series.jpg",
-    videoUrl: "/videos/short-form.mp4",
+    videoUrl: "/videos/short-form-v2.mp4",
     videoOrientation: "portrait",
     goal: "Repurpose long-form content into scroll-stopping vertical clips.",
     description:

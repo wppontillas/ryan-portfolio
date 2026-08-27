@@ -14,7 +14,7 @@ export function Showreel() {
         />
         <Reveal delay={0.1}>
           <VideoPlayer
-            videoUrl="/videos/showreel.mp4"
+            videoUrl="/videos/showreel-v2.mp4"
             thumbnail="/placeholders/showreel.svg"
             title="Showreel"
             aspect="aspect-video"
