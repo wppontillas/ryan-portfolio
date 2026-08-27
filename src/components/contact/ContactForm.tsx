@@ -42,40 +42,68 @@ function FieldError({ message }: { message?: string }) {
   );
 }
 
-function SuccessMessage({
+function SuccessModal({
   message,
-  onReset,
+  onClose,
 }: {
   message: string;
-  onReset: () => void;
+  onClose: () => void;
 }) {
+  useEffect(() => {
+    const timer = setTimeout(onClose, 6000);
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [onClose]);
+
   return (
     <div
-      role="status"
-      className="flex flex-col items-center gap-4 rounded-2xl border border-accent/40 bg-accent/10 px-6 py-16 text-center"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Inquiry sent"
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-6"
     >
-      <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-fg">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path
-            d="M5 13l4 4L19 7"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </span>
-      <h3 className="font-display text-2xl font-medium text-fg">
-        Inquiry Sent
-      </h3>
-      <p className="max-w-md text-base text-fg-secondary">{message}</p>
-      <button
-        type="button"
-        onClick={onReset}
-        className="mt-2 text-sm font-medium text-accent underline-offset-4 hover:underline"
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="relative flex w-full max-w-md flex-col items-center gap-4 rounded-2xl border border-border bg-bg px-6 py-12 text-center shadow-2xl"
       >
-        Send another inquiry
-      </button>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-fg-secondary transition-colors hover:bg-bg-secondary hover:text-fg"
+        >
+          &times;
+        </button>
+        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-accent text-accent-fg">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M5 13l4 4L19 7"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+        <h3 className="font-display text-2xl font-medium text-fg">
+          Inquiry Sent
+        </h3>
+        <p className="max-w-sm text-base text-fg-secondary">{message}</p>
+        <button
+          type="button"
+          onClick={onClose}
+          className="mt-2 rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-accent-fg transition-colors hover:bg-accent/90"
+        >
+          Close
+        </button>
+      </div>
     </div>
   );
 }
@@ -83,23 +111,32 @@ function SuccessMessage({
 export function ContactForm() {
   const [state, formAction] = useActionState(submitInquiry, initialState);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [formKey, setFormKey] = useState(0);
   const errors = state.fieldErrors ?? {};
 
   useEffect(() => {
     if (state.status === "success") setShowSuccess(true);
   }, [state]);
 
-  if (showSuccess) {
-    return (
-      <SuccessMessage
-        message={state.message ?? "Thanks for reaching out."}
-        onReset={() => setShowSuccess(false)}
-      />
-    );
-  }
+  const closeSuccess = () => {
+    setShowSuccess(false);
+    setFormKey((k) => k + 1);
+  };
 
   return (
-    <form action={formAction} noValidate className="flex flex-col gap-6">
+    <>
+      {showSuccess && (
+        <SuccessModal
+          message={state.message ?? "Thanks for reaching out."}
+          onClose={closeSuccess}
+        />
+      )}
+      <form
+        key={formKey}
+        action={formAction}
+        noValidate
+        className="flex flex-col gap-6"
+      >
       {state.status === "error" && state.message && (
         <div
           role="status"
@@ -231,7 +268,8 @@ export function ContactForm() {
         />
       </div>
 
-      <SubmitButton />
-    </form>
+        <SubmitButton />
+      </form>
+    </>
   );
 }
