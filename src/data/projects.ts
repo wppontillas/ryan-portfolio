@@ -3,7 +3,7 @@ import type { Project } from "@/lib/types";
 export const projects: Project[] = [
   {
     id: "1",
-    slug: "talking-head-youtube-edit",
+    slug: "speed-ramping",
     title: "SPEED RAMPING",
     category: "speedramp",
     clientType: "Content Creator",
@@ -72,10 +72,10 @@ export const projects: Project[] = [
   },
   {
     id: "3",
-    slug: "podcast-highlight-clips",
+    slug: "hologram-effects",
     title: "HOLOGRAM EFFECTS",
     category: "hologram-effects",
-    clientType: "Podcast Host",
+    clientType: "Content Creator",
     thumbnail: "/thumbnails/hologram-effects-car-edit-10-v2.jpg",
     videoUrl: "/videos/hologram-effects/car-edit-10.mp4",
     goal: "Turn a two-hour conversation into a full episode plus shareable highlight clips.",
@@ -90,11 +90,11 @@ export const projects: Project[] = [
     ],
     tools: ["Adobe Premiere Pro", "Adobe Audition"],
     featured: true,
-    year: 2025,
+    year: 2026,
   },
   {
     id: "4",
-    slug: "product-commercial-cut",
+    slug: "product-graphics",
     title: "MOTION GRAPHICS",
     category: "motion-graphics",
     clientType: "Small Business",
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     ],
     tools: ["Adobe Premiere Pro", "After Effects"],
     featured: true,
-    year: 2025,
+    year: 2026,
     clips: [
       {
         title: "Altrad Final",
@@ -127,7 +127,7 @@ export const projects: Project[] = [
   },
   {
     id: "5",
-    slug: "social-media-content-batch",
+    slug: "social-media-content",
     title: "SOCIAL MEDIA CONTENT BATCH",
     category: "reels",
     clientType: "Online Coach",
@@ -140,7 +140,7 @@ export const projects: Project[] = [
     services: ["Clean cuts", "Animated captions", "Basic motion graphics", "Music"],
     tools: ["CapCut", "Canva"],
     featured: true,
-    year: 2025,
+    year: 2026,
     clips: [
       {
         title: "Gramo",
