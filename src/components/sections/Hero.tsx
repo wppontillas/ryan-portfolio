@@ -165,7 +165,7 @@ export function Hero() {
                 strokeWidth="5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="pointer-events-none absolute -bottom-6 -right-6 h-32 w-32 text-fg opacity-[0.1]"
+                className="pointer-events-none absolute -bottom-6 -right-6 h-32 w-32 text-accent opacity-[0.18]"
               >
                 <SpecialtyIcon icon={item.icon} />
               </svg>
