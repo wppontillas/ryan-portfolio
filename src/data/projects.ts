@@ -34,7 +34,7 @@ export const projects: Project[] = [
     thumbnail: "/thumbnails/car-content-reel-series.jpg",
     videoUrl: "/videos/cars/canada-3.mp4",
     videoOrientation: "portrait",
-    goal: "Repurpose long-form content into scroll-stopping vertical clips.",
+    goal: "Repurpose content into scroll-stopping vertical clips.",
     description:
       "A high-energy series of reels crafted with fast-paced cuts, dynamic transitions, speed ramps, cinematic B-roll, and sound design to keep viewers engaged from start to finish.",
     services: [
@@ -44,7 +44,7 @@ export const projects: Project[] = [
       "Music",
       "Sound effects",
     ],
-    tools: ["CapCut", "After Effects"],
+    tools: ["CapCut", "Adobe After Effects"],
     featured: true,
     year: 2026,
     clips: [
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     clientType: "Content Creator",
     thumbnail: "/thumbnails/hologram-effects-car-edit-10-v2.jpg",
     videoUrl: "/videos/hologram-effects/car-edit-10.mp4",
-    goal: "Turn a two-hour conversation into a full episode plus shareable highlight clips.",
+    goal: "Showcase advanced VFX skills with a futuristic AR-style hologram concept.",
     description:
       "A futuristic visual effects edit featuring holographic overlays, motion tracking, glowing interfaces, and seamless compositing to create an immersive sci-fi experience.",
     services: [
@@ -88,7 +88,7 @@ export const projects: Project[] = [
       "Speaker framing",
       "Audio cleanup",
     ],
-    tools: ["Adobe Premiere Pro", "Adobe Audition"],
+    tools: ["Adobe Premiere Pro", "Adobe After Effects"],
     featured: true,
     year: 2026,
   },
@@ -97,10 +97,10 @@ export const projects: Project[] = [
     slug: "product-graphics",
     title: "MOTION GRAPHICS",
     category: "motion-graphics",
-    clientType: "Small Business",
+    clientType: "Corporate Brand",
     thumbnail: "/thumbnails/product-commercial-cut.jpg",
     videoUrl: "/videos/motion-graphics/altrad-final.mp4",
-    goal: "Deliver a polished 30-second promotional cut for paid ads.",
+    goal: "Communicate a company's global reach through animated maps, logo reveals, and clean typography.",
     description:
       "A visually engaging motion graphics edit featuring animated text, smooth transitions, dynamic shapes, and polished visual elements designed to make information more compelling and memorable.",
     services: [
@@ -109,7 +109,7 @@ export const projects: Project[] = [
       "Color correction",
       "Music licensing guidance",
     ],
-    tools: ["Adobe Premiere Pro", "After Effects"],
+    tools: ["Adobe Premiere Pro", "Adobe After Effects"],
     featured: true,
     year: 2026,
     clips: [
@@ -130,15 +130,15 @@ export const projects: Project[] = [
     slug: "social-media-content",
     title: "SOCIAL MEDIA CONTENT BATCH",
     category: "reels",
-    clientType: "Online Coach",
+    clientType: "Automotive Content Creator",
     thumbnail: "/thumbnails/social-media-gramo.jpg",
     videoUrl: "/videos/social-media/gramo.mp4",
     videoOrientation: "portrait",
-    goal: "Produce a week's worth of on-brand social content from one filming day.",
+    goal: "Turn a batch of car meet footage into scroll-stopping short-form clips.",
     description:
       "A batch of short-form social media edits crafted for Instagram, TikTok, and Reels, featuring fast-paced cuts, smooth transitions, engaging visuals, and a consistent style built for stronger audience retention.",
     services: ["Clean cuts", "Animated captions", "Basic motion graphics", "Music"],
-    tools: ["CapCut", "Canva"],
+    tools: ["Adobe After Effects", "Capcut"],
     featured: true,
     year: 2026,
     clips: [
