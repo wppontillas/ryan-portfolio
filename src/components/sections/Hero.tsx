@@ -18,16 +18,39 @@ function SpecialtyIcon({ icon }: { icon: (typeof specialties)[number]["icon"] })
           <path d="M12 62A38 38 0 0 1 88 62" />
           <path d="M12 62h8M88 62h-8M50 22v8" />
           <circle cx="50" cy="62" r="4" fill="currentColor" stroke="none" />
-          <path d="M50 62 74 34" />
+          <g className="icon-gauge-needle">
+            <path d="M50 62 74 34" />
+          </g>
         </>
       );
     case "motion-graphics":
       return (
         <>
-          <path d="M15 75C35 75 35 25 50 25S65 75 85 75" />
-          <rect x="11" y="71" width="8" height="8" />
-          <rect x="46" y="21" width="8" height="8" />
-          <rect x="81" y="71" width="8" height="8" />
+          <path className="icon-motion-path" d="M15 75C35 75 35 25 50 25S65 75 85 75" />
+          <rect
+            className="icon-motion-node"
+            style={{ animationDelay: "0s" }}
+            x="11"
+            y="71"
+            width="8"
+            height="8"
+          />
+          <rect
+            className="icon-motion-node"
+            style={{ animationDelay: "0.3s" }}
+            x="46"
+            y="21"
+            width="8"
+            height="8"
+          />
+          <rect
+            className="icon-motion-node"
+            style={{ animationDelay: "0.6s" }}
+            x="81"
+            y="71"
+            width="8"
+            height="8"
+          />
         </>
       );
     case "cinematic":
@@ -35,11 +58,13 @@ function SpecialtyIcon({ icon }: { icon: (typeof specialties)[number]["icon"] })
         <>
           <rect x="15" y="42" width="70" height="42" rx="6" />
           <path d="M15 58h70" />
-          <path
-            d="M17 42 13 24h14l4 18M41 42l-4-18h14l4 18M65 42l-4-18h14l4 18"
-            transform="translate(0 -3) skewX(-18)"
-          />
-          <rect x="12" y="18" width="76" height="15" rx="4" />
+          <g className="icon-clapper-top">
+            <path
+              d="M17 42 13 24h14l4 18M41 42l-4-18h14l4 18M65 42l-4-18h14l4 18"
+              transform="translate(0 -3) skewX(-18)"
+            />
+            <rect x="12" y="18" width="76" height="15" rx="4" />
+          </g>
         </>
       );
     case "reels":
@@ -47,7 +72,7 @@ function SpecialtyIcon({ icon }: { icon: (typeof specialties)[number]["icon"] })
         <>
           <rect x="27" y="12" width="46" height="76" rx="12" />
           <path d="M27 30h46M27 70h46" />
-          <path d="M43 40 62 50 43 60Z" />
+          <path className="icon-reel-play" d="M43 40 62 50 43 60Z" />
         </>
       );
     default:

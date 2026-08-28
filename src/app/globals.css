@@ -66,6 +66,82 @@ body {
   animation: marquee 28s linear infinite;
 }
 
+@keyframes gauge-needle-sweep {
+  0%, 100% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.icon-gauge-needle {
+  transform-box: view-box;
+  transform-origin: 50px 62px;
+  animation: gauge-needle-sweep 2.4s ease-in-out infinite;
+}
+
+@keyframes motion-path-draw {
+  0% {
+    stroke-dashoffset: 160;
+  }
+  60%, 100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.icon-motion-path {
+  stroke-dasharray: 160;
+  animation: motion-path-draw 3s ease-in-out infinite;
+}
+
+@keyframes motion-node-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.35);
+  }
+}
+
+.icon-motion-node {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: motion-node-pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes clapper-clap {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-7deg);
+  }
+}
+
+.icon-clapper-top {
+  transform-box: view-box;
+  transform-origin: 14px 33px;
+  animation: clapper-clap 2.6s ease-in-out infinite;
+}
+
+@keyframes reel-play-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
+}
+
+.icon-reel-play {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: reel-play-pulse 1.6s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

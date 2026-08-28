@@ -1,6 +1,6 @@
 "use server";
 
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
 export interface ContactFormState {
   status: "idle" | "success" | "error";
@@ -117,28 +117,34 @@ export async function submitInquiry(
     };
   }
 
-  const resend = new Resend(process.env.RESEND_API_KEY);
-
-  const { error } = await resend.emails.send({
-    from: "Portfolio Contact <onboarding@resend.dev>",
-    to: process.env.CONTACT_TO_EMAIL!,
-    replyTo: values.email,
-    subject: `New project inquiry from ${values.name}`,
-    html: buildInquiryEmailHtml(values),
-    text: [
-      `Name: ${values.name}`,
-      `Email: ${values.email}`,
-      `Company: ${values.company || "-"}`,
-      `Need: ${values.need}`,
-      `Volume: ${values.volume}`,
-      `Budget: ${values.budget || "-"}`,
-      "",
-      "Description:",
-      values.description,
-    ].join("\n"),
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: {
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_APP_PASSWORD,
+    },
   });
 
-  if (error) {
+  try {
+    await transporter.sendMail({
+      from: `Portfolio Contact <${process.env.GMAIL_USER}>`,
+      to: process.env.CONTACT_TO_EMAIL!,
+      replyTo: values.email,
+      subject: `New project inquiry from ${values.name}`,
+      html: buildInquiryEmailHtml(values),
+      text: [
+        `Name: ${values.name}`,
+        `Email: ${values.email}`,
+        `Company: ${values.company || "-"}`,
+        `Need: ${values.need}`,
+        `Volume: ${values.volume}`,
+        `Budget: ${values.budget || "-"}`,
+        "",
+        "Description:",
+        values.description,
+      ].join("\n"),
+    });
+  } catch (error) {
     console.error("Failed to send project inquiry:", error);
     return {
       status: "error",
