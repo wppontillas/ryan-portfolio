@@ -169,22 +169,6 @@ export const projects: Project[] = [
       },
     ],
   },
-  {
-    id: "6",
-    slug: "creative-brand-story-edit",
-    title: "SPEEDRAMP BRAND STORY",
-    category: "speedramp",
-    clientType: "Creative Agency",
-    thumbnail: "/placeholders/project-06.svg",
-    videoUrl: "",
-    goal: "Craft an emotive brand story from mixed-quality raw footage.",
-    description:
-      "A narrative brand piece built from mixed-source footage, leaning on color grading and sound design to unify the story.",
-    services: ["Color grading", "Sound design", "Motion graphics", "Story structuring"],
-    tools: ["Adobe Premiere Pro", "After Effects"],
-    featured: false,
-    year: 2025,
-  },
 ];
 
 export function getFeaturedProjects(): Project[] {

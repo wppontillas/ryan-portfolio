@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import { parseVideoUrl } from "@/lib/video";
+
+const PLAY_EVENT = "video-player:play";
 
 export function VideoPlayer({
   videoUrl,
@@ -19,12 +21,13 @@ export function VideoPlayer({
 }) {
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
-  const scrollVideoRef = useRef<HTMLVideoElement>(null);
+  const id = useId();
+  const videoRef = useRef<HTMLVideoElement>(null);
   const parsed = parseVideoUrl(videoUrl);
   const canPlay = parsed.kind !== "none";
 
   useEffect(() => {
-    const video = scrollVideoRef.current;
+    const video = videoRef.current;
     if (!eager || !video) return;
 
     const observer = new IntersectionObserver(
@@ -41,11 +44,32 @@ export function VideoPlayer({
     return () => observer.disconnect();
   }, [eager]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const announcePlaying = () => {
+      window.dispatchEvent(new CustomEvent<string>(PLAY_EVENT, { detail: id }));
+    };
+    const pauseIfOther = (e: Event) => {
+      if ((e as CustomEvent<string>).detail !== id) {
+        video.pause();
+      }
+    };
+
+    video.addEventListener("play", announcePlaying);
+    window.addEventListener(PLAY_EVENT, pauseIfOther);
+    return () => {
+      video.removeEventListener("play", announcePlaying);
+      window.removeEventListener(PLAY_EVENT, pauseIfOther);
+    };
+  }, [id, eager, playing]);
+
   if (eager && canPlay && parsed.kind === "direct") {
     return (
       <div className={`relative w-full overflow-hidden rounded-2xl bg-black ${aspect}`}>
         <video
-          ref={scrollVideoRef}
+          ref={videoRef}
           src={parsed.url}
           controls
           controlsList="nodownload noremoteplayback"
@@ -90,6 +114,7 @@ export function VideoPlayer({
       return (
         <div className={`relative w-full overflow-hidden rounded-2xl bg-black ${aspect}`}>
           <video
+            ref={videoRef}
             src={parsed.url}
             controls
             controlsList="nodownload noremoteplayback"
