@@ -1,4 +1,9 @@
-export type Category = "speedramp" | "motion-graphics" | "cinematic" | "reels";
+export type Category =
+  | "speedramp"
+  | "motion-graphics"
+  | "cinematic"
+  | "reels"
+  | "hologram-effects";
 
 export interface CategoryMeta {
   value: Category;
@@ -10,6 +15,7 @@ export const CATEGORIES: CategoryMeta[] = [
   { value: "motion-graphics", label: "Motion Graphics" },
   { value: "cinematic", label: "Cinematic" },
   { value: "reels", label: "Reels" },
+  { value: "hologram-effects", label: "Hologram Effects" },
 ];
 
 export interface BeforeAfter {
@@ -17,6 +23,12 @@ export interface BeforeAfter {
   finalUrl: string;
   rawLabel?: string;
   finalLabel?: string;
+}
+
+export interface ProjectClip {
+  title: string;
+  videoUrl: string;
+  thumbnail?: string;
 }
 
 export interface Project {
@@ -35,6 +47,7 @@ export interface Project {
   featured: boolean;
   year: number;
   beforeAfter?: BeforeAfter;
+  clips?: ProjectClip[];
 }
 
 export interface Service {

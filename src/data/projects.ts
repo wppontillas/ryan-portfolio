@@ -4,14 +4,14 @@ export const projects: Project[] = [
   {
     id: "1",
     slug: "talking-head-youtube-edit",
-    title: "TALKING HEADS",
-    category: "cinematic",
+    title: "SPEED RAMPING",
+    category: "speedramp",
     clientType: "Content Creator",
-    thumbnail: "/placeholders/project-01.svg",
-    videoUrl: "",
+    thumbnail: "/thumbnails/speedramp-car-edit-08v2.jpg",
+    videoUrl: "/videos/speedramp/car-edit-08.mp4",
     goal: "Turn raw footage into a fast-paced, engaging YouTube video.",
     description:
-      "A polished talking-head edit designed to keep viewers engaged through tight pacing, clean cuts, strategic B-roll, animated text, enhanced audio, and subtle sound design.",
+      "A dynamic speed-ramping edit that blends fast and slow-motion transitions to emphasize movement, create dramatic impact, and keep every sequence visually engaging.",
     services: [
       "Removed pauses and mistakes",
       "Added B-roll",
@@ -28,15 +28,15 @@ export const projects: Project[] = [
   {
     id: "2",
     slug: "short-form-reel-series",
-    title: "SHORT-FORM REEL SERIES",
+    title: "CAR CONTENT REEL SERIES",
     category: "reels",
-    clientType: "Personal Brand",
-    thumbnail: "/placeholders/project-02.svg",
-    videoUrl: "",
+    clientType: "Automotive Content Creator",
+    thumbnail: "/thumbnails/car-content-reel-series.jpg",
+    videoUrl: "/videos/cars/canada-3.mp4",
     videoOrientation: "portrait",
     goal: "Repurpose long-form content into scroll-stopping vertical clips.",
     description:
-      "A batch of short-form clips cut from long-form source, built for retention with pattern interrupts, captions, and sound design.",
+      "A high-energy series of reels crafted with fast-paced cuts, dynamic transitions, speed ramps, cinematic B-roll, and sound design to keep viewers engaged from start to finish.",
     services: [
       "Clean cuts",
       "Animated captions",
@@ -44,21 +44,43 @@ export const projects: Project[] = [
       "Music",
       "Sound effects",
     ],
-    tools: ["CapCut", "Adobe Premiere Pro"],
+    tools: ["CapCut", "After Effects"],
     featured: true,
     year: 2026,
+    clips: [
+      {
+        title: "Canada 3",
+        videoUrl: "/videos/cars/canada-3.mp4",
+        thumbnail: "/thumbnails/cars-canada-3.jpg",
+      },
+      {
+        title: "Car Edit 03",
+        videoUrl: "/videos/cars/car-edit-03.mp4",
+        thumbnail: "/thumbnails/cars-car-edit-03.jpg",
+      },
+      {
+        title: "Car Edit 04",
+        videoUrl: "/videos/cars/car-edit-04.mp4",
+        thumbnail: "/thumbnails/cars-car-edit-04.jpg",
+      },
+      {
+        title: "Luffy",
+        videoUrl: "/videos/cars/luffy.mp4",
+        thumbnail: "/thumbnails/cars-luffy.jpg",
+      },
+    ],
   },
   {
     id: "3",
     slug: "podcast-highlight-clips",
-    title: "PODCAST HIGHLIGHT CLIPS",
-    category: "cinematic",
+    title: "HOLOGRAM EFFECTS",
+    category: "hologram-effects",
     clientType: "Podcast Host",
-    thumbnail: "/placeholders/project-03.svg",
-    videoUrl: "",
+    thumbnail: "/thumbnails/hologram-effects-car-edit-10-v2.jpg",
+    videoUrl: "/videos/hologram-effects/car-edit-10.mp4",
     goal: "Turn a two-hour conversation into a full episode plus shareable highlight clips.",
     description:
-      "Full podcast episode cleanup paired with a set of captioned, speaker-framed highlight clips for social distribution.",
+      "A futuristic visual effects edit featuring holographic overlays, motion tracking, glowing interfaces, and seamless compositing to create an immersive sci-fi experience.",
     services: [
       "Full podcast editing",
       "Social media clips",
@@ -73,14 +95,14 @@ export const projects: Project[] = [
   {
     id: "4",
     slug: "product-commercial-cut",
-    title: "PRODUCT COMMERCIAL CUT",
+    title: "MOTION GRAPHICS",
     category: "motion-graphics",
     clientType: "Small Business",
-    thumbnail: "/placeholders/project-04.svg",
-    videoUrl: "",
+    thumbnail: "/thumbnails/product-commercial-cut.jpg",
+    videoUrl: "/videos/motion-graphics/altrad-final.mp4",
     goal: "Deliver a polished 30-second promotional cut for paid ads.",
     description:
-      "A tightly paced commercial edit built for a short attention span, with motion graphics and a clear call to action.",
+      "A visually engaging motion graphics edit featuring animated text, smooth transitions, dynamic shapes, and polished visual elements designed to make information more compelling and memorable.",
     services: [
       "Jump cuts",
       "Motion graphics",
@@ -90,6 +112,18 @@ export const projects: Project[] = [
     tools: ["Adobe Premiere Pro", "After Effects"],
     featured: true,
     year: 2025,
+    clips: [
+      {
+        title: "Altrad Final",
+        videoUrl: "/videos/motion-graphics/altrad-final.mp4",
+        thumbnail: "/thumbnails/product-commercial-cut.jpg",
+      },
+      {
+        title: "Motion Graphics Reel",
+        videoUrl: "/videos/motion-graphics/mogrt-01.mp4",
+        thumbnail: "/thumbnails/mogrt-01.jpg",
+      },
+    ],
   },
   {
     id: "5",
@@ -97,15 +131,43 @@ export const projects: Project[] = [
     title: "SOCIAL MEDIA CONTENT BATCH",
     category: "reels",
     clientType: "Online Coach",
-    thumbnail: "/placeholders/project-05.svg",
-    videoUrl: "",
+    thumbnail: "/thumbnails/social-media-gramo.jpg",
+    videoUrl: "/videos/social-media/gramo.mp4",
+    videoOrientation: "portrait",
     goal: "Produce a week's worth of on-brand social content from one filming day.",
     description:
-      "A batch of Instagram and TikTok-ready edits produced from a single shoot day, styled consistently for one brand identity.",
+      "A batch of short-form social media edits crafted for Instagram, TikTok, and Reels, featuring fast-paced cuts, smooth transitions, engaging visuals, and a consistent style built for stronger audience retention.",
     services: ["Clean cuts", "Animated captions", "Basic motion graphics", "Music"],
     tools: ["CapCut", "Canva"],
     featured: true,
     year: 2025,
+    clips: [
+      {
+        title: "Gramo",
+        videoUrl: "/videos/social-media/gramo.mp4",
+        thumbnail: "/thumbnails/social-media-gramo.jpg",
+      },
+      {
+        title: "Free Bird",
+        videoUrl: "/videos/social-media/free-bird.mp4",
+        thumbnail: "/thumbnails/social-media-free-bird.jpg",
+      },
+      {
+        title: "What Is Bro Doing",
+        videoUrl: "/videos/social-media/what-is-bro-doing.mp4",
+        thumbnail: "/thumbnails/social-media-what-is-bro-doing.jpg",
+      },
+      {
+        title: "Yala Click",
+        videoUrl: "/videos/social-media/yala-click.mp4",
+        thumbnail: "/thumbnails/social-media-yala-click.jpg",
+      },
+      {
+        title: "Car Edit 06",
+        videoUrl: "/videos/social-media/car-edit-06.mp4",
+        thumbnail: "/thumbnails/social-media-car-edit-06.jpg",
+      },
+    ],
   },
   {
     id: "6",
@@ -119,15 +181,9 @@ export const projects: Project[] = [
     description:
       "A narrative brand piece built from mixed-source footage, leaning on color grading and sound design to unify the story.",
     services: ["Color grading", "Sound design", "Motion graphics", "Story structuring"],
-    tools: ["Adobe Premiere Pro", "After Effects", "DaVinci Resolve"],
+    tools: ["Adobe Premiere Pro", "After Effects"],
     featured: false,
     year: 2025,
-    beforeAfter: {
-      rawUrl: "",
-      finalUrl: "",
-      rawLabel: "RAW FOOTAGE",
-      finalLabel: "FINAL EDIT",
-    },
   },
 ];
 

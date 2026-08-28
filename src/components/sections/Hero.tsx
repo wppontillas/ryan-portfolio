@@ -4,11 +4,56 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 
 const specialties = [
-  { number: "01", label: "Speedramp" },
-  { number: "02", label: "Motion Graphics" },
-  { number: "03", label: "Cinematic" },
-  { number: "04", label: "Reels" },
-];
+  { number: "01", label: "Speedramp", icon: "speedramp" },
+  { number: "02", label: "Motion Graphics", icon: "motion-graphics" },
+  { number: "03", label: "Cinematic", icon: "cinematic" },
+  { number: "04", label: "Reels", icon: "reels" },
+] as const;
+
+function SpecialtyIcon({ icon }: { icon: (typeof specialties)[number]["icon"] }) {
+  switch (icon) {
+    case "speedramp":
+      return (
+        <>
+          <path d="M12 62A38 38 0 0 1 88 62" />
+          <path d="M12 62h8M88 62h-8M50 22v8" />
+          <circle cx="50" cy="62" r="4" fill="currentColor" stroke="none" />
+          <path d="M50 62 74 34" />
+        </>
+      );
+    case "motion-graphics":
+      return (
+        <>
+          <path d="M15 75C35 75 35 25 50 25S65 75 85 75" />
+          <rect x="11" y="71" width="8" height="8" />
+          <rect x="46" y="21" width="8" height="8" />
+          <rect x="81" y="71" width="8" height="8" />
+        </>
+      );
+    case "cinematic":
+      return (
+        <>
+          <rect x="15" y="42" width="70" height="42" rx="6" />
+          <path d="M15 58h70" />
+          <path
+            d="M17 42 13 24h14l4 18M41 42l-4-18h14l4 18M65 42l-4-18h14l4 18"
+            transform="translate(0 -3) skewX(-18)"
+          />
+          <rect x="12" y="18" width="76" height="15" rx="4" />
+        </>
+      );
+    case "reels":
+      return (
+        <>
+          <rect x="27" y="12" width="46" height="76" rx="12" />
+          <path d="M27 30h46M27 70h46" />
+          <path d="M43 40 62 50 43 60Z" />
+        </>
+      );
+    default:
+      return null;
+  }
+}
 
 export function Hero() {
   return (
@@ -83,14 +128,26 @@ export function Hero() {
           {specialties.map((item, i) => (
             <div
               key={item.label}
-              className={`flex flex-col justify-between gap-8 rounded-2xl border border-border bg-card p-6 transition-colors duration-300 hover:border-accent/50 ${
+              className={`relative flex flex-col justify-between gap-8 overflow-hidden rounded-2xl border border-border bg-card p-6 transition-colors duration-300 hover:border-accent/50 ${
                 i % 2 === 1 ? "sm:translate-y-6" : ""
               }`}
             >
-              <span className="font-display text-sm font-medium text-accent">
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 100 100"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="pointer-events-none absolute -bottom-6 -right-6 h-32 w-32 text-fg opacity-[0.1]"
+              >
+                <SpecialtyIcon icon={item.icon} />
+              </svg>
+              <span className="relative font-display text-sm font-medium text-accent">
                 {item.number}
               </span>
-              <span className="font-display text-lg font-medium leading-tight text-fg">
+              <span className="relative font-display text-lg font-medium leading-tight text-fg">
                 {item.label}
               </span>
             </div>

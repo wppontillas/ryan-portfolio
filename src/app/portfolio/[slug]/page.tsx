@@ -69,9 +69,39 @@ export default async function ProjectDetailPage({
                 ? "aspect-[9/16] max-w-sm mx-auto"
                 : "aspect-video"
             }
+            eager={Boolean(project.videoUrl)}
           />
         </Container>
       </section>
+
+      {project.clips && project.clips.length > 1 && (
+        <section className="pb-16">
+          <Container className="flex flex-col gap-6">
+            <h2 className="text-xs font-medium uppercase tracking-[0.2em] text-fg-secondary">
+              More From This Series
+            </h2>
+            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+              {project.clips
+                .filter((clip) => clip.videoUrl !== project.videoUrl)
+                .map((clip) => (
+                  <div key={clip.videoUrl} className="flex flex-col gap-2">
+                    <VideoPlayer
+                      videoUrl={clip.videoUrl}
+                      thumbnail={clip.thumbnail ?? project.thumbnail}
+                      title={clip.title}
+                      aspect={
+                        project.videoOrientation === "portrait"
+                          ? "aspect-[9/16]"
+                          : "aspect-video"
+                      }
+                    />
+                    <p className="text-sm text-fg-secondary">{clip.title}</p>
+                  </div>
+                ))}
+            </div>
+          </Container>
+        </section>
+      )}
 
       <section className="pb-24 sm:pb-32">
         <Container>

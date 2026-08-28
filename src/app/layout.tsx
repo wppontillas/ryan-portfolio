@@ -48,6 +48,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       className={`${inter.variable} ${spaceGrotesk.variable} h-full`}
+      data-scroll-behavior="smooth"
     >
       <body className="flex min-h-full flex-col bg-bg font-sans text-fg antialiased">
         <a

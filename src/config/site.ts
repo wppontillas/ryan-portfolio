@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "RYAN",
+  name: "RYN",
   role: "Video Editor · Speedramp, Motion Graphics & Cinematic Edits",
   tagline: "I turn raw footage into cinematic, scroll-stopping content.",
   description:
